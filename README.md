@@ -1,7 +1,7 @@
 About objgraph
 ==============
 
-Home: https://pypi.org/project/objgraph/
+Home: https://pypi.org/project/objgraph
 
 Package license: MIT
 
