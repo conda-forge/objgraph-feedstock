@@ -11,7 +11,7 @@ source:
   sha256: bf29512d7f8b457b53fa0722ea59f516abb8abc59b78f97f0ef81394a0c615a7
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -20,18 +20,28 @@ requirements:
     - pip
     - python
   run:
-    - graphviz
+    - python-graphviz
     - python
 
 test:
+  source_files:
+    - tests.py
+  requires:
+    - pip
+    - pytest
   imports:
     - objgraph
+  commands:
+    - python -m pip check
+    - pytest tests.py -k "not setup_py"
 
 about:
-  home: https://pypi.org/project/objgraph/
+  home: https://pypi.org/project/objgraph
   summary: Draws Python object reference graphs with graphviz
   license: MIT
   license_file: LICENSE
+  doc_url: https://mg.pov.lt/objgraph
+  dev_url: https://github.com/mgedmin/objgraph
 
 extra:
   recipe-maintainers:
