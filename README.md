@@ -5,11 +5,13 @@ Home: https://pypi.org/project/objgraph
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/objgraph-feedstock/blob/master/LICENSE.txt)
 
 Summary: Draws Python object reference graphs with graphviz
 
+Development: https://github.com/mgedmin/objgraph
 
+Documentation: https://mg.pov.lt/objgraph
 
 Current build status
 ====================
