@@ -24,16 +24,12 @@ requirements:
     - python
 
 test:
-  source_files:
-    - tests.py
   requires:
     - pip
-    - pytest
   imports:
     - objgraph
   commands:
     - python -m pip check
-    - pytest tests.py -k "not setup_py"
 
 about:
   home: https://pypi.org/project/objgraph
