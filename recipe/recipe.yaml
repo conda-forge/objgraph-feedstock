@@ -1,0 +1,47 @@
+schema_version: 1
+
+context:
+  name: objgraph
+  version: "3.5.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: 4752ca5bcc0e0512e41b8cc4d2780ac2fd3b3eabd03b7e950a5594c06203dfc4
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+  run:
+    - python-graphviz
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - objgraph
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - '*'
+
+about:
+  summary: Draws Python object reference graphs with graphviz
+  license: MIT
+  license_file: LICENSE
+  homepage: https://pypi.org/project/objgraph
+  repository: https://github.com/mgedmin/objgraph
+  documentation: https://mg.pov.lt/objgraph
+
+extra:
+  recipe-maintainers:
+    - marcelotrevisani
