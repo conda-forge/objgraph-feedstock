@@ -1,5 +1,5 @@
 {% set name = "objgraph" %}
-{% set version = "3.5.0" %}
+{% set version = "3.7.0" %}
 
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4752ca5bcc0e0512e41b8cc4d2780ac2fd3b3eabd03b7e950a5594c06203dfc4
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: b6ef4b244217410509b257970413b01a979d54df48d2d4055b6941e8679ddbbb
 
 build:
   number: 0
