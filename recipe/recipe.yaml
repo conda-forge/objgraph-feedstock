@@ -1,16 +1,16 @@
 schema_version: 1
 
 context:
-  version: 3.6.2
-  build_number: '0'
+  version: "3.7.0"
+  build_number: 0
 
 package:
   name: objgraph
   version: ${{ version }}
 
 source:
-- url: https://files.pythonhosted.org/packages/source/o/objgraph/objgraph-${{ version }}.tar.gz
-  sha256: 00b9f2f40f7422e3c7f45a61c4dafdaf81f03ff0649d6eaec866f01030e51ad8
+  - url: https://files.pythonhosted.org/packages/source/o/objgraph/objgraph-${{ version }}.tar.gz
+    sha256: b6ef4b244217410509b257970413b01a979d54df48d2d4055b6941e8679ddbbb
 
 build:
   number: ${{ build_number }}
@@ -27,13 +27,13 @@ requirements:
     - python >=${{ python_min }}
 
 tests:
-- python:
-    imports:
-    - objgraph
-    pip_check: true
-    python_version:
-      - ${{ python_min }}.*
-      - '*'
+  - python:
+      imports:
+        - objgraph
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - '*'
 
 about:
   summary: Draws Python object reference graphs with graphviz
